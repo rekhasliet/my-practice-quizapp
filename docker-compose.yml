@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  quizapp:
+    build: .
+    container_name: quizapp-app
+    ports:
+      - "3032:3032"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://host.docker.internal:5432/quizapp
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
